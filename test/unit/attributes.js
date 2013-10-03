@@ -1396,3 +1396,12 @@ test( "coords returns correct values in IE6/IE7, see #10828", function() {
 	area = map.html("<area shape='rect' coords='0,0,0,0' href='#' alt='a' />").find("area");
 	equal( area.attr("coords"), "0,0,0,0", "did not retrieve coords correctly" );
 });
+
+test("check, uncheck, checked", function() {
+	var $foo = $("<input type='checkbox' checked />");
+	equal($foo.checked(), true);
+	$foo.uncheck();
+	equal($foo.checked(), false);
+	$foo.check();
+	equal($foo.checked(), true);
+});
